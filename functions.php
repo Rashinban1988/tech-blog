@@ -52,10 +52,10 @@ function origin_theme_enqueue_scripts()
     '1.0.0'
   );
 
-  $timestamp = date('Ymdgis', filemtime(get_stylesheet_directory() . '/js/common.js'));
+  $timestamp = date('YmdHis', filemtime(get_stylesheet_directory() . '/js/common.js'));
   wp_enqueue_script('add-script', get_stylesheet_directory_uri() . '/js/common.js', [], $timestamp, true);
 
-  $timestamp = date('Ymdgis', filemtime(get_stylesheet_directory() . '/styles/css/styles.css'));
+  $timestamp = date('YmdHis', filemtime(get_stylesheet_directory() . '/styles/css/styles.css'));
   wp_enqueue_style('add-common-style', get_stylesheet_directory_uri() . '/styles/css/styles.css', array('wp-block-library'), $timestamp);
 }
 add_action('wp_enqueue_scripts', 'origin_theme_enqueue_scripts');
