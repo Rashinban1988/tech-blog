@@ -17,8 +17,10 @@ function origin_theme_setup()
   }
 }
 add_action('after_setup_theme', 'origin_theme_setup');
+
 function origin_theme_enqueue_scripts()
 {
+  // jQueryの読み込み
   wp_enqueue_script(
     'jquery',
     'https://code.jquery.com/jquery-3.3.1.js',
@@ -30,7 +32,7 @@ function origin_theme_enqueue_scripts()
   wp_enqueue_script(
     'Slick',
     'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js',
-    array(),
+    array('jquery'), // jQueryに依存
     '1.0.0'
   );
 
@@ -51,16 +53,14 @@ function origin_theme_enqueue_scripts()
   );
 
   $timestamp = date('Ymdgis', filemtime(get_stylesheet_directory() . '/js/common.js'));
-  wp_enqueue_script('jquery');
   wp_enqueue_script('add-script', get_stylesheet_directory_uri() . '/js/common.js', [], $timestamp, true);
 
   $timestamp = date('Ymdgis', filemtime(get_stylesheet_directory() . '/styles/css/styles.css'));
   wp_enqueue_style('add-common-style', get_stylesheet_directory_uri() . '/styles/css/styles.css', [], $timestamp);
 }
 add_action('wp_enqueue_scripts', 'origin_theme_enqueue_scripts');
+
 // Contact Form 7の自動pタグ無効化
 add_filter('wpcf7_autop_or_not', '__return_false');
-
-
 
 ?>
