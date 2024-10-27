@@ -1,0 +1,53 @@
+@use '../../foundation/variables' as vars;
+
+.fv-top {
+  padding-top: 51px;
+  background-image: url(../../images/fv_bg.webp);
+  background-size: cover;
+  background-position: center;
+
+  @include vars.sp {
+    padding-top: 0;
+    background-image: none;
+  }
+
+  img {
+    width: 1000px;
+    margin: auto;
+
+    @include vars.sp {
+      width: 100%;
+    }
+  }
+}
+
+.fv-btn__wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 24px 0;
+
+  @include vars.sp {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+}
+
+.fv-bottom {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0 32px 0;
+  overflow: hidden;
+  width: 100%;
+  gap: 24px;
+
+  img {
+    width: 140px;
+    margin: 0 12px;
+
+    @include vars.sp {
+      width: 109px;
+    }
+  }
+}

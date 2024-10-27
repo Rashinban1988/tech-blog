@@ -1,0 +1,239 @@
+@import '../foundation/variables';
+html {
+	scroll-behavior: smooth;
+	// スクロールパディング
+	scroll-padding-top: 80px;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: 'Zen Kaku Gothic New', 'NotoSansJpMedium','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','游ゴシック','Yu Gothic','游ゴシック体','YuGothic','ＭＳ Ｐゴシック','MS PGothic',sans-serif;;
+//   overflow-x: hidden;
+	color: $textBk;
+
+	&.no-scroll {
+		overflow: hidden;
+	}
+}
+
+* {
+	box-sizing: border-box;
+	@include sp {
+		// overflow-x: hidden;
+	}
+}
+
+img {
+	display: block;
+}
+
+main {
+	margin-top: 111px;
+
+	@include sp {
+		margin-top: 48px;
+	}
+}
+
+section {
+	@include sp {
+		overflow: hidden;
+	}
+}
+
+/* 初期状態のスタイル */
+.fadeIn {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+	visibility: hidden;
+}
+
+/* アニメーション後のスタイル */
+.fadeIn.visible {
+	opacity: 1;
+	transform: translateY(0);
+	visibility: visible;
+}
+
+.section-title {
+	font-family: 'SawarabiMincho';
+	margin-top: 15px;
+	font-size: 36px;
+	font-weight: 400;
+
+	@include sp {
+		margin-top: 8px;
+		font-size: 26px;
+	}
+
+	&__sub {
+		font-family: 'LatoBold';
+		color: #3DA999;
+		font-size: 14px;
+
+		@include sp {
+			font-size: 11px;
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+
+		&.sp-center-none {
+			@include sp {
+				text-align: left;
+				justify-content: flex-start;
+			}
+		}
+
+		&.sp-between {
+			@include sp {
+				justify-content: space-between;
+			}
+		}
+
+		@include sp {
+			text-align: center;
+			justify-content: center;
+		}
+
+		&.center {
+			text-align: center;
+			justify-content: center;
+		}
+
+		&.flex-column {
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			gap: 30px;
+
+			@include sp {
+				flex-direction: row;
+				align-items: flex-end;
+				justify-content: space-between;
+				text-align: left;
+			}
+		}
+
+		.more-btn {
+			color: #121212;
+			font-size: 15px;
+			font-weight: 500;
+			display: flex;
+			gap: 12px;
+			align-items: center;
+			transition: all 0.3s;
+
+			@include sp {
+				display: none;
+			}
+
+			&.sp-show {
+				@include sp {
+					display: flex;
+					font-size: 13px;
+				}
+			}
+
+			&::after {
+				content: '';
+				display: block;
+				background-image: url(../../images/section_title_arrow.webp);
+				width: 32px;
+				height: 32px;
+				background-repeat: no-repeat;
+				background-size: contain;
+				transition: all 0.3s;
+			}
+
+			@include pc {
+				&:hover {
+					color: #3DA999;
+					transition: all 0.3s;
+
+					&::after {
+						background-image: url(../../images/section_title_arrow_hover.webp);
+					}
+				}
+			}
+		}
+	}
+}
+
+.sp-more-btn {
+	display: none;
+	color: #121212;
+	font-size: 15px;
+	font-weight: 500;
+	display: flex;
+	gap: 12px;
+	align-items: center;
+	transition: all 0.3s;
+
+	@include sp {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	&::after {
+		content: '';
+		display: block;
+		background-image: url(../../images/section_title_arrow.webp);
+		width: 32px;
+		height: 32px;
+		background-repeat: no-repeat;
+		background-size: contain;
+		transition: all 0.3s;
+	}
+}
+
+.pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	margin-top: 40px;
+
+	@include sp {
+		margin-top: 32px;
+	}
+
+	.page-numbers {
+		width: 32px;
+		height: 32px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: #EFEFEF;
+		border-radius: 9999px;
+		color: #121212;
+		font-size: 15px;
+		font-family: 'LatoBold';
+
+		&.current {
+			background: #3DA999;
+			color: #fff;
+		}
+	}
+
+	.prev, .next {
+		background: transparent;
+		width: 24px;
+		height: 24px;
+	}
+
+	.prev {
+		transform: rotate(180deg);
+	}
+}

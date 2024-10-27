@@ -1,0 +1,124 @@
+@use '../../foundation/variables' as vars;
+
+.sidebar-links {
+
+  &__wrapper {
+    padding-bottom: 20px;
+  }
+
+  &__contents {
+    width: 100%;
+    margin-top: 24px;
+    color: #121212;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    background: #E9F8F6;
+    padding: 16px;
+    border-radius: 6px;
+    justify-content: space-between;
+    transition: all 0.3;
+    box-shadow: 0 6px 16px rgba(#3DA999, 0.3);
+
+    @include vars.sp {
+      width: 300px;
+      margin: 16px auto 0 auto;
+    }
+
+    @include vars.pc {
+      &:hover {
+        opacity: 0.5;
+        transition: opacity 0.3;
+      }
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    img {
+      width: 48px;
+    }
+
+    p {
+
+    }
+  }
+}
+
+.sidebar-attention-article {
+  margin-bottom: 32px;
+
+  &__title {
+    font-size: 18px;
+    font-weight: 500;
+
+    @include vars.sp {
+      font-size: 16px;
+    }
+  }
+
+  &__contents {
+    margin-top: 12px;
+
+    @include vars.sp {
+      margin-top: 14px;
+    }
+
+    .link {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-top: 16px;
+      justify-content: space-between;
+      color: #121212;
+
+      @include vars.pc {
+        &:hover {
+
+          p {
+            text-decoration: underline;
+            transition: all 0.3;
+            color: #999999;
+          }
+        }
+      }
+
+      @include vars.sp {
+        margin-top: 15px;
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      .thumbnail {
+        width: 106px;
+        aspect-ratio: 16/9;
+
+        @include vars.sp {
+          width: 115px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .text-wrapper {
+        width: 178px;
+
+        @include vars.sp {
+          width: 211px;
+        }
+
+        p {
+          transition: all 0.3;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@use '../../foundation/variables' as vars;
+
+.cta-banner {
+  background-image: url(../../images/cta_banner_bg.webp);
+  background-size: cover;
+  background-position: center;
+  padding: 40px 0;
+
+  @include vars.sp {
+    background-image: url(../../images/cta_banner_bg_sp.webp);
+  }
+
+  h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+
+    @include vars.sp {
+      font-size: 24px;
+    }
+  }
+
+  p {
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 16px;
+    letter-spacing: 0.1em;
+
+    @include vars.sp {
+      font-size: 16px;
+    }
+  }
+
+  &__btn-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 24px;
+
+    @include vars.sp {
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+  }
+}

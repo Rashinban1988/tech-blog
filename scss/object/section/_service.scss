@@ -1,0 +1,273 @@
+@use '../../foundation/variables' as vars;
+
+.service {
+  padding: 20px 0 80px 0;
+
+  &.service-page {
+    padding: 0 0 80px 0;
+
+    @include vars.sp {
+      padding: 28px 0 48px 0;
+    }
+  }
+
+  @include vars.sp {
+    padding: 20px 0 48px 0;
+  }
+
+  &__inner {
+    max-width: 1440px;
+    margin: auto;
+    position: relative;
+
+    @include vars.sp {
+      max-width: 390px;
+    }
+  }
+
+  &__back-object {
+    position: absolute;
+    width: 522px;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    &.service-page {
+      top: 68px;
+
+      @include vars.sp {
+        top: -28px;
+      }
+    }
+
+    @include vars.sp {
+      width: 180px;
+      left: auto;
+      right: 0;
+    }
+  }
+}
+
+.service-contents {
+  width: 152px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &.service-page {
+    width: 100%;
+    cursor: default;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include vars.sp {
+      width: 171px;
+      flex-direction: column;
+    }
+
+    &:hover {
+      .image-wrap {
+        background: #F8F8F8;
+      }
+    }
+
+    .image-wrap {
+      width: 144px;
+      cursor: default;
+
+      @include vars.sp {
+        width: 120px;
+      }
+    }
+
+    .text-wrap {
+      width: 420px;
+
+      @include vars.sp {
+        width: 100%;
+      }
+
+      .title {
+        font-size: 18px;
+        margin-top: 0;
+
+        @include vars.sp {
+          justify-content: center;
+          margin-top: 12px;
+          font-size: 16px;
+        }
+
+        &:before {
+          display: none;
+        }
+      }
+
+      .text {
+        font-size: 14px;
+        margin-top: 8px;
+        text-align: left;
+        font-weight: 400;
+        line-height: 1.6;
+        letter-spacing: 0.05em;
+
+        @include vars.sp {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @include vars.sp {
+    width: 171px;
+  }
+
+  @include vars.pc {
+
+    &:hover {
+      .image-wrap {
+        background: #3DA999;
+        transition: all 0.3s;
+      }
+    }
+  }
+
+  &.second {
+
+    @include vars.pc {
+
+      &:hover {
+        .image-wrap {
+          background: #8BB92A;
+        }
+      }
+    }
+  }
+
+  .image-wrap {
+    width: 100%;
+    border-radius: 8px;
+    background: #F8F8F8;
+    padding: 21px;
+
+    @include vars.sp {
+      padding: 16px;
+      width: 120px;
+      margin: auto;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  p {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 18px;
+    font-weight: 500;
+
+    @include vars.sp {
+      margin-top: 12px;
+      font-size: 16px;
+    }
+  }
+
+  &__inner {
+    width: 900px;
+    padding-top: 60px;
+    margin: auto;
+
+    &.service-page {
+      padding-top: 0;
+    }
+
+    @include vars.sp {
+      width: 342px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+    align-items: flex-start;
+
+    @include vars.sp {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &.second {
+      margin-top: 48px;
+    }
+
+    .title {
+      font-size: 26px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      @include vars.sp {
+        font-size: 18px;
+      }
+
+      &::before {
+        border-radius: 9999px;
+        content: '';
+        display: block;
+        width: 12px;
+        height: 12px;
+        background: #3DA999;
+
+        @include vars.sp {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      &.second {
+        &::before {
+          background: #8BB92A;
+        }
+      }
+    }
+  }
+
+  &__box {
+    width: 584px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px 64px;
+
+    &.service-page {
+      flex-direction: column;
+      width: 588px;
+
+      @include vars.sp {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+
+    @include vars.sp {
+      width: 100%;
+      justify-content: flex-start;
+      gap: 16px 0;
+    }
+  }
+}
+
+.service-contents__sticky-container {
+  height: 1000px;
+  width: 200px;
+  position: relative;
+
+}
+.sticky {
+  position: sticky;
+  top: 200px;
+  left: 0;
+  padding-bottom: 0px; // 上で止めたい場合はこの数値を上げる
+}

@@ -1,0 +1,107 @@
+@use '../../foundation/variables' as vars;
+
+.flow {
+  padding-bottom: 56px;
+  background-image: url(../../images/flow_bg.webp);
+  background-size: cover;
+
+  @include vars.sp {
+    padding-bottom: 32px;
+    background-image: url(../../images/flow_bg_sp.webp);
+  }
+
+  &__inner {
+    width: 900px;
+    margin: auto;
+
+    @include vars.sp {
+      width: 342px;
+    }
+  }
+
+  &__contents {
+    width: 185px;
+
+    @include vars.sp {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    &__left {
+      @include vars.sp {
+        width: 198px;
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      background: rgba(#fff, 0.8);
+      border-radius: 10px;
+      padding: 24px 32px;
+      justify-content: space-between;
+      margin-top: 32px;
+
+      @include vars.sp {
+        width: 100%;
+        padding: 24px;
+        flex-direction: column;
+        margin-top: 16px;
+        gap: 24px;
+      }
+    }
+
+    .number {
+      font-size: 20px;
+      color: #3DA999;
+      text-align: center;
+      font-family: 'LatoBold';
+
+      @include vars.sp {
+        display: none;
+      }
+    }
+
+    .sp-number {
+      display: none;
+
+      @include vars.sp {
+        display: inline-block;
+        font-size: 18px;
+        color: #3DA999;
+        font-family: 'LatoBold';
+        margin-right: 10px;
+      }
+    }
+
+    img {
+      width: 112px;
+      margin: 16px auto 0 auto;
+      box-shadow: 0 0 30px rgba(#C5ECE4, 0.8);
+      border-radius: 9999px;
+
+      @include vars.sp {
+        width: 80px;
+        margin: 0;
+      }
+    }
+
+    .title {
+      font-size: 18px;
+      text-align: center;
+      margin-top: 16px;
+      font-weight: 500;
+
+      @include vars.sp {
+        font-size: 16px;
+        text-align: left;
+      }
+    }
+
+    .text {
+      font-size: 14px;
+      margin-top: 8px;
+    }
+  }
+}

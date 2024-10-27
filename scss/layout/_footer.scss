@@ -1,0 +1,202 @@
+@use '../foundation/variables' as vars;
+
+.footer-top {
+  padding: 40px 0 72px 0;
+  background: #F8F8F8;
+
+  @include vars.sp {
+    padding: 32px 0 48px 0;
+  }
+
+  &__inner {
+    width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+
+    @include vars.sp {
+      width: 342px;
+      flex-direction: column;
+    }
+
+    .footer-left {
+      width: 244px;
+
+      @include vars.sp {
+        margin: auto;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .address {
+        font-size: 14px;
+        margin-top: 16px;
+
+        @include vars.sp {
+          display: none;
+        }
+      }
+
+      .tel {
+        font-size: 15px;
+        margin-top: 16px;
+
+        @include vars.sp {
+          display: none;
+        }
+
+        .business-hours {
+          font-size: 11px;
+        }
+      }
+    }
+
+    .footer-center {
+      width: 456px;
+
+      @include vars.sp {
+        width: 100%;
+      }
+
+      nav {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px 88px;
+
+        @include vars.sp {
+          flex-direction: column;
+          flex-wrap: wrap;
+          gap: 6px 0;
+          align-items: flex-start;
+          height: 140px;
+          margin-top: 22px;
+        }
+      }
+
+      a {
+        transition: 0.3s;
+        color: #121212;
+        display: block;
+        font-size: 14px;
+
+        @include vars.pc {
+          &:hover {
+            color: #888888;
+            transition: 0.3s;
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .left {
+        width: 56px;
+
+        @include vars.sp {
+          width: 171px;
+        }
+      }
+
+      .center {
+        width: 98px;
+
+        @include vars.sp {
+          width: 171px;
+        }
+      }
+
+      .right {
+        width: 56px;
+
+        @include vars.sp {
+          width: 171px;
+        }
+      }
+    }
+
+    .footer-right {
+      width: 148px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      @include vars.sp {
+        width: 100%;
+        margin-top: 40px;
+      }
+    }
+  }
+}
+
+.footer-bottom {
+  width: 100%;
+  background-color: #3E3E3E;
+  color: #fff;
+  padding: 15px 0;
+  font-size: 12px;
+  font-family: 'NotoSansJpMedium';
+
+  @include vars.sp {
+    padding: 16px 0 74px 0;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+    margin: auto;
+
+    @include vars.sp {
+      width: 100%;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .left {
+      a {
+        color: #fff;
+        transition: 0.3s;
+
+        @include vars.pc {
+          &:hover {
+            opacity: 0.7;
+            transition: 0.3s;
+          }
+        }
+
+        &:first-child {
+          margin-right: 24px;
+          padding-right: 24px;
+          border-right: 1px solid #fff;
+        }
+      }
+    }
+  }
+}
+
+.footer-sp-text {
+  display: none;
+
+  @include vars.sp {
+    display: block;
+    margin-top: 32px;
+  }
+
+  .address {
+    font-size: 14px;
+  }
+
+  .tel {
+    font-size: 15px;
+    margin-top: 8px;
+  }
+
+  .business-hours {
+    font-size: 11px;
+    margin-top: 2px;
+  }
+}

@@ -1,0 +1,73 @@
+@use '../../foundation/variables' as vars;
+
+.free-inspection-banner {
+  width: 900px;
+  background: #F8F8F8;
+  padding: 48px 0;
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgba(#121212, 0.1);
+  position: relative;
+  margin: auto;
+  margin-bottom: 40px;
+
+  @include vars.sp {
+    width: 342px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    overflow: visible;
+    padding: 32px 0 30px 0;
+  }
+
+  .title {
+    font-size: 24px;
+    text-align: center;
+    font-weight: 700;
+
+    @include vars.sp {
+      font-size: 18px;
+    }
+  }
+
+  .text {
+    font-size: 20px;
+    margin-top: 16px;
+    text-align: center;
+
+    @include vars.sp {
+      font-size: 15px;
+    }
+
+    .green {
+      color: #007766;
+      font-weight: 700;
+    }
+  }
+
+  .btn-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 32px;
+
+    @include vars.sp {
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      margin-top: 24px;
+    }
+  }
+
+  .bg-image {
+    position: absolute;
+    width: 93px;
+    right: 12px;
+    bottom: -40px;
+
+    @include vars.sp {
+      width: 68px;
+      right: 0;
+      bottom: auto;
+      top: -20px;
+    }
+  }
+}

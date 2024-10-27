@@ -1,0 +1,63 @@
+@use '../../foundation/variables' as vars;
+
+.search-form {
+  margin-bottom: 32px;
+
+  @include vars.sp {
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 500;
+
+    @include vars.sp {
+      font-size: 16px;
+    }
+  }
+
+  &__input-wrapper {
+    margin-top: 12px;
+    display: flex;
+
+    @include vars.sp {
+      margin-top: 10px;
+    }
+  }
+
+  &__input {
+    width: 250px;
+    border: 1px solid #3DA999;
+    padding: 14px 12px;
+    border-radius: 4px 0 0 4px;
+    font-size: 15px;
+
+    @include vars.sp {
+      font-size: 14px;
+      width: 292px;
+    }
+
+    &::placeholder {
+      color: #555555;
+    }
+  }
+
+  &__btn {
+    width: 50px;
+    background: #3DA999;
+    border-radius: 0 4px 4px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+      display: block;
+      content: '';
+      background-image: url(../../images/search_icon.svg);
+      width: 20px;
+      height: 20px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}

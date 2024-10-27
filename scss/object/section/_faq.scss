@@ -1,0 +1,130 @@
+@use '../../foundation/variables' as vars;
+
+.faq {
+  padding-top: 80px;
+
+  @include vars.sp {
+    padding-top: 48px;
+  }
+
+  &__inner {
+    width: 900px;
+    margin: auto;
+
+    @include vars.sp {
+      width: 342px;
+    }
+  }
+
+  &__contents {
+
+    &__wrapper {
+      margin-top: 30px;
+
+      @include vars.sp {
+        margin-top: 24px;
+      }
+    }
+
+    &__box {
+      margin-top: 16px;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      .faq__contents {
+        padding: 16px 20px 16px 32px;
+        border-radius: 10px;
+        display: flex;
+        gap: 11px;
+
+        @include vars.sp {
+          padding: 16px;
+        }
+
+        .icon {
+          font-size: 24px;
+          font-family: 'LatoBold';
+          color: #3DA999;
+
+          @include vars.sp {
+            font-size: 20px;
+          }
+        }
+
+        .text {
+          font-size: 15px;
+          line-height: 1.6;
+
+          @include vars.sp {
+            font-size: 14px;
+          }
+        }
+
+        &.question {
+          background: #F8F8F8;
+          padding-right: 81px;
+          position: relative;
+
+          @include vars.sp {
+            padding-right: 65px;
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            background-image: url(../../images/question_icon_plus.webp);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 32px;
+            height: 32px;
+            display: block;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 22px;
+            transition: all 0.3s;
+          }
+        }
+
+        &.answer {
+          max-height: 0;
+          overflow: hidden;
+          padding: 0 20px 0 32px;
+          transition: all 0.3s;
+
+          @include vars.sp {
+            padding: 0 16px;
+          }
+          .icon {
+            color: #8BB92A;
+          }
+        }
+      }
+
+      &.open {
+
+        .faq__contents {
+          &.question {
+            &::after {
+              background-image: url(../../images/question_icon_minus.webp);
+            }
+          }
+
+          &.answer {
+            max-height: 500px;
+            overflow: visible;
+            padding: 16px 20px 16px 32px;
+            transition: max-height 0.5s;
+
+            @include vars.sp {
+              padding: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
