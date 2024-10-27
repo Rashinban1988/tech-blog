@@ -2,5 +2,5 @@ node_modules/
 gulpfile.js
 package.json
 package-lock.json
-styles.css
+/styles.css
 styles.css.map
