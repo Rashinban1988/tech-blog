@@ -5062,7 +5062,7 @@ main {
 .column-single__content h2 {
   margin-top: 40px;
 }
-@media screen and (max-width: 768px) 
+@media screen and (max-width: 768px) {
   .column-single__content h2 {
     margin-top: 24px;
   }
