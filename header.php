@@ -22,12 +22,12 @@
 </head>
 <body>
   <header class="header pc">
-    <div class="header-top">
-      <h1>
-        <a href="<?php echo home_url(); ?>">技術ブログ</a>
-      </h1>
+    <!-- <div class="header-top"> -->
+      <!-- <h1> -->
+        <!-- <a href="<?php echo home_url(); ?>">技術ブログ</a> -->
+      <!-- </h1> -->
 
-      <div class="header-top-right">
+      <!-- <div class="header-top-right"> -->
         <!-- <a href="tel:<?php // echo $tel; ?>" class="header-top-right__tel-wrapper">
           <img src="<?php // echo get_template_directory_uri(); ?>/images/tel_icon.svg" alt="電話アイコン">
           <div class="text-area">
@@ -39,13 +39,13 @@
           <a href="<?php echo home_url('/'.$requestBtnLink); ?>" class="btn request header">資料請求</a>
           <a href="<?php echo home_url('/'.$contactLink); ?>" class="btn contact header">お問い合わせ</a>
         </div> -->
-      </div>
-    </div>
+      <!-- </div> -->
+    <!-- </div> -->
 
     <div class="header-bottom">
       <nav class="header-bottom__nav">
-        <a href="<?php echo home_url('/tech-blog'); ?>">技術ブログ</a>
-        <a href="<?php echo home_url('/news'); ?>">お知らせ</a>
+        <a href="<?php echo home_url('/tech-blog'); ?>">TECH BLOG</a>
+        <a href="<?php echo home_url('/news'); ?>">NEWS</a>
       </nav>
     </div>
   </header>

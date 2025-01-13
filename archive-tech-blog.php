@@ -110,4 +110,3 @@
     </div>
   </main>
   <?php get_template_part('components/ctaBanner'); ?>
-<?php get_footer();?>
