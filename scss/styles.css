@@ -5275,7 +5275,7 @@ main {
 }
 .column-single__content code {
   background: #F8F8F8;
-  padding: 2px 4px;
+  padding: 10px 16px;
   border-radius: 4px;
 }
 .column-single__related-articles {
