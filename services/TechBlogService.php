@@ -13,7 +13,7 @@ class TechBlogService extends PostService
         $search_query = get_search_query();
         $args = array(
             'post_type' => 'tech-blog',
-            'posts_per_page' => 5,
+            'posts_per_page' => 6,
             'orderby' => 'date',
             'order' => 'DESC',
             'paged' => $paged,
