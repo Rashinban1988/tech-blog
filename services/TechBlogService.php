@@ -34,7 +34,7 @@ class TechBlogService extends PostService
     public static function get_frequently_tech_blogs() {
         $args = array(
             'post_type' => 'tech-blog',
-            'posts_per_page' => 4,
+            'posts_per_page' => 5,
             'orderby' => 'meta_value_num',
             'meta_key' => 'post_views_count',
             'order' => 'DESC',
