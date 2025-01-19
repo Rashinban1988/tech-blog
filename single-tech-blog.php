@@ -66,7 +66,7 @@
           ?>
           <a href="<?php the_permalink(); ?>" class="link index<?php echo $loopIndex;?>">
             <div class="thumbnail">
-              <img src="<?php echo $techBlog->thumbnail_url; ?>" alt="<?php echo $techBlog->title; ?>">
+              <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo get_the_title(); ?>">
             </div>
             <div class="top-text">
               <p class="date"><?php echo get_the_date(); ?></p>
@@ -93,4 +93,3 @@
     });
   });
 </script>
-<?php get_footer();?>
