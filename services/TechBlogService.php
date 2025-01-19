@@ -25,6 +25,22 @@ class TechBlogService extends PostService
         return new \WP_Query($args);
     }
 
+    public static function get_attention_tech_blogs() {
+        $args = array(
+            'post_type' => 'tech-blog',
+            'posts_per_page' => 4,
+            'orderby' => 'rand',
+            'meta_query' => [
+                [
+                    'key'     => 'attention_flag',
+                    'value'   => '1', // trueの値は通常1として保存されます
+                    'compare' => '==',
+                ],
+            ],
+        );
+        return new \WP_Query($args);
+    }
+
     public static function get_categories($taxonomy = 'tech-blog-category')
     {
         return get_terms($taxonomy);
@@ -34,7 +50,7 @@ class TechBlogService extends PostService
     public static function get_frequently_tech_blogs() {
         $args = array(
             'post_type' => 'tech-blog',
-            'posts_per_page' => 5,
+            'posts_per_page' => 6,
             'orderby' => 'meta_value_num',
             'meta_key' => 'post_views_count',
             'order' => 'DESC',
